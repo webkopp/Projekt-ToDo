@@ -28,9 +28,16 @@ function saveInput() {
 }
 
 function displayOutput() {
-  let outputDiv = document.getElementById("output")
-  outputDiv.innerHTML = ''
-  for (let i = 0; i < inputArray.length; i++) {
-    outputDiv.innerHTML += inputArray[i] + "<br>"
-  }
-}
+   let outputDiv = document.getElementById("output")
+   outputDiv.innerHTML = " "
+   for (let i = 0; i < inputArray.length; i++) {
+      outputDiv.innerHTML += '<input type="checkbox" name="checkbox" id="radio' + i + '">' + inputArray[i] + ' <span class="close">❎</span><br>'
+   }
+ }
+
+ // Event auch bei Drücken der Enter-Taste
+//  HIERKOMMT_ID.addEventListener("keydown", function (event) {
+//    if (event.key === "Enter") {
+//        addTodo();
+//    }
+// });
