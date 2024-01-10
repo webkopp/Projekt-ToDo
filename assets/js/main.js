@@ -34,10 +34,12 @@ function displayOutput() {
      outputDiv.innerHTML += '<div><input type="checkbox" id="checkbox' + i + '" onclick="toggleStrikeThrough(' + i + ')">' + inputArray[i] + ' <span class="close" onclick="deleteRow(' + i + ')">❎</span></div>'
    }
  }
- 
+
+ // checkox und text holen
  function toggleStrikeThrough(index) {
    let checkbox = document.getElementById('checkbox' + index)
    let text = checkbox.nextSibling
+   // wenn checkbox aktiviert -> den text durchstreichen
    if (checkbox.checked) {
      text.style.textDecoration = 'line-through'
    } else {
@@ -45,6 +47,7 @@ function displayOutput() {
    }
  }
  
+ // komplette zeile löschen wenn X angeklickt wird
  function deleteRow(index) {
    let div = document.getElementById('output').getElementsByTagName('div')[index]
    div.remove()
@@ -55,4 +58,4 @@ function displayOutput() {
 //    if (event.key === "Enter") {
 //        addTodo();
 //    }
-// });
+// })
