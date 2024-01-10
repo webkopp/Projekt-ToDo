@@ -19,20 +19,18 @@
 // - Prüfe, ob das To-do auch wirklich erledigt ist.
 //     - Nutze dafür alert() oder eine andere Weise.
 
- const todos = []
- document.getElementById("input-box").addEventListener("submit", function(event) {
-    event.preventDefault()
-    const todoInput = document.getElementById("todo-output")
-    todos.push(todoInput)
-    displayTodos()
- })
+let inputArray = []
 
- function displayTodos() {
-    const todoOutput = document.getElementById("todo-output")
-    todoOutput.innerHTML = ""
-    todos.forEach(function(todo, index) {
-        const totoItem = document.createElement("p")
-        totdoItem.textContent = `${index + 1}. ${todo}`
-        todoOutput.appendChild(totoItem)
-    })
- }
+function saveInput() {
+  let input = document.getElementById("inputTodo").value
+  inputArray.push(input)
+  displayOutput()
+}
+
+function displayOutput() {
+  let outputDiv = document.getElementById("output")
+  outputDiv.innerHTML = ''
+  for (let i = 0; i < inputArray.length; i++) {
+    outputDiv.innerHTML += inputArray[i] + "<br>"
+  }
+}

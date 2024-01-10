@@ -11,14 +11,14 @@
 <body>
     <header></header>
     <main>
-        <div class="todo-box">
-            <h1>ToDo's !!!</h1>
-            <form id="input-box">
-                <input type="text" id="todo-input" placeholder="Was ist dein Autrag...?">
-                <button type="submit" id="dodo-add">ADD</button>
-            </form>
-            <div id="toto-ouput"></div>
-        </div>
+        <main>
+            <div class="todoBox">
+                <h1>ToDo's !</h1>
+                <input type="text" id="inputTodo" placeholder="Welche Mission willst du...">
+                <button onclick="saveInput(); return false">ADD</button>
+                <div id="output"></div>
+            </div>
+        </main>
     </main>
     <footer></footer>
     <script src="./assets/js/main.js"></script>
