@@ -28,11 +28,26 @@ function saveInput() {
 }
 
 function displayOutput() {
-   let outputDiv = document.getElementById("output")
-   outputDiv.innerHTML = " "
+   let outputDiv = document.getElementById('output')
+   outputDiv.innerHTML = ''
    for (let i = 0; i < inputArray.length; i++) {
-      outputDiv.innerHTML += '<input type="checkbox" name="checkbox" id="radio' + i + '">' + inputArray[i] + ' <span class="close">❎</span><br>'
+     outputDiv.innerHTML += '<div><input type="checkbox" id="checkbox' + i + '" onclick="toggleStrikeThrough(' + i + ')">' + inputArray[i] + ' <span class="close" onclick="deleteRow(' + i + ')">❎</span></div>'
    }
+ }
+ 
+ function toggleStrikeThrough(index) {
+   let checkbox = document.getElementById('checkbox' + index)
+   let text = checkbox.nextSibling
+   if (checkbox.checked) {
+     text.style.textDecoration = 'line-through'
+   } else {
+     text.style.textDecoration = 'none'
+   }
+ }
+ 
+ function deleteRow(index) {
+   let div = document.getElementById('output').getElementsByTagName('div')[index]
+   div.remove()
  }
 
  // Event auch bei Drücken der Enter-Taste
